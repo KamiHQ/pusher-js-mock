@@ -21,7 +21,11 @@ class PusherMock {
     this.setAuthInfo = this.setAuthInfo.bind(this);
     this.subscribe = this.subscribe.bind(this);
     this.unsubscribe = this.unsubscribe.bind(this);
-    this.connection = { bind: () => "" };
+    this.connection = {
+      bind: () => "",
+      socket_id: "1",
+      state: "connected"
+    };
   }
 
   public setAuthInfo(errored: boolean, auth: any) {
