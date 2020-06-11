@@ -9,6 +9,7 @@ class PusherMock {
   public info: Record<string, any> | undefined = undefined;
   public clientKey: string | undefined;
   public config: Config | undefined;
+  public connection: object;
 
   public channels = PusherMockInstance.channels;
   public channel = PusherMockInstance.channel;
@@ -20,6 +21,7 @@ class PusherMock {
     this.setAuthInfo = this.setAuthInfo.bind(this);
     this.subscribe = this.subscribe.bind(this);
     this.unsubscribe = this.unsubscribe.bind(this);
+    this.connection = { bind: () => "" };
   }
 
   public setAuthInfo(errored: boolean, auth: any) {
